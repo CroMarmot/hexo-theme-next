@@ -1,0 +1,60 @@
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+
+  20%, 60% {
+    transform: rotate(-45deg);
+  }
+
+  40%, 80% {
+    transform: rotate(45deg);
+  }
+}
+
+.codeforces-corner {
+  $bg-color = unquote(hexo-config('android_chrome_color'));
+
+  :hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
+  svg {
+    border: 0;
+    color: #fff;
+    fill: $bg-color;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: $zindex-0;
+  }
+
+  +tablet-mobile() {
+    if (hexo-config('local_search.enable') || hexo-config('algolia_search.enable')) {
+      display: none;
+    }
+
+    svg {
+      if (($scheme == 'Pisces') || ($scheme == 'Gemini')) {
+        color: $bg-color;
+        fill: #fff;
+      }
+    }
+
+    .codeforces-corner:hover .octo-arm {
+      animation: none;
+    }
+
+    .codeforces-corner .octo-arm {
+      animation: octocat-wave 560ms ease-in-out;
+    }
+  }
+
+  if ($scheme == 'Mist') {
+    +mobile() {
+      svg {
+        top: inherit;
+      }
+    }
+  }
+}

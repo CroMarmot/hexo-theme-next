@@ -18,3 +18,4 @@
 
   {{ next_url(github_URL, github_image, {class: 'github-corner', title: github_title, "aria-label": github_title}) }}
 {%- endif %}
+{{ partial('_partials/codeforces-banner.swig', {}, {cache: theme.cache.enable}) }}
