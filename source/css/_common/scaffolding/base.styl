@@ -31,6 +31,23 @@ body {
   }
 }
 
+body:after{
+  content:"";
+  position:fixed;
+  top:0;
+  height:100%;
+  width:100vw;
+  left:0;
+  right:0;
+  z-index:-1;
+  background-image: url(https://i.imgur.com/PbqheB2.jpg),url(/Blog/images/bg.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position: center;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-headings;
   font-weight: bold;
@@ -96,4 +113,9 @@ dt {
 dd {
   margin: 0;
   padding: 0;
+}
+
+.main-inner {
+  background-color: rgba(255,255,255,0.8);
+  padding: 2em;
 }
